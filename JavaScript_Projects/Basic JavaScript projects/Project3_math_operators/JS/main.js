@@ -1,5 +1,5 @@
 function addition_Function() {
-  var Math = 4 + 4;
+  var addition = 4 + 4;
   document.getElementById("Math").innerHTML = "4 + 4 = " + addition;// addition 4 + 4
 } 
 
@@ -20,7 +20,7 @@ function division() {
 
 function more_Math() {
   var simple_Math = (3 + 3) * 2 / 2 -4;// series of addition, multiply, divide and subtract
-  document.getElementById("Math").innerHTML "3 plus 3, multiplied by 2 divided in half and then subtracted by 4 equals " + simple_Math;
+  document.getElementById("Math").innerHTML = "3 plus 3, multiplied by 2 divided in half and then subtracted by 4 equals " + simple_Math;
 }
 
 function modulus_Operator() {
@@ -35,13 +35,13 @@ function negation_Operation() {
 
 function increment_Operation() {
 var y = 12;
-x++;// increment from 12 to 13
+y++;// increment from 12 to 13
 document.write(y);
 }
 
 function decrement_Operation() {
 var x = 6.5;
- y--;//decrement from 6.5 to 5.5
+ x--;//decrement from 6.5 to 5.5
  document.write(x);
 }
 
@@ -53,6 +53,3 @@ function random2_Operation() {
 window.alert(Math.random() * 100);// returns a number between 0 and 100
 }
 
-function pow_Operation() {
-Math.pow(8, 2); // returns 64
-}
