@@ -1,5 +1,5 @@
 function my_Dictionary() {//function call my_Dictionary
-    var Animal = { //varible for KVP's
+    var Animal =() { //varible for KVP's
         Species: "Dog",
         Color:"Brown",
         Breed: "German Sheapard",

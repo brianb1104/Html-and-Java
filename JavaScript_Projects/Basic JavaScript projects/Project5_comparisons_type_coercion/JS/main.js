@@ -67,3 +67,11 @@ function division() {
   document.write(10 > 15 || 10 > 4);// displays True
 
   document.write(5 > 20 || 10 > 4);//displays False
+
+  function not_Function() {
+      document.getElementById("Not").innerHTML = !(20 > 10);// display False
+  }
+
+  function not_Function() {
+      document.getElementById("Not").innerHTML = !(5 > 10);//displays True
+  }
