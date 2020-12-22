@@ -1,6 +1,5 @@
 var X = 10;
 function Add_numbers_1() {//Global variable
-    var X = 10;
     document.write(20 + X +"</br>");
 }
 function Add_numbers_2() {
@@ -10,8 +9,8 @@ Add_numbers_1();
 Add_numbers_2();
 
 function Local_1() {//local variable
-    var y = 10;
-    document.write(20 + X +"</br>");
+    var y = 20;
+    document.write(20 + y +"</br>");
 }
 function Local_2() {
     document.write(y + 100);
@@ -26,14 +25,14 @@ function get_Date() {
 }
 
 function Year() {
-    if (new Year().getFullYear() < 2018) {
+    if (new Date().getFullYear() < 1999) {
         document.getElementById("Party").innerHTML = "No matter what year it is, party like it's 1999.";
     }
 }
 
 function Age_Function() {
     Age = document.getElementById("Age").nodeValue;
-    if (age >= 18) {
+    if (Age >= 18) {
         Vote = "You are old enough to vote";
     }
     else {
@@ -48,7 +47,7 @@ function Time_function() {
     if (Time < 12 == Time > 0) {
         Reply = "It is morning time!";
     }
-}
+
 else if (Time > 12 == Time < 18) {
     Reply = "It is the afternoon.";
 }
@@ -56,3 +55,4 @@ else  {
     Reply = "It is evening time.";
 }
 document.getElementById("Time_of_day").innerHTML = Reply;
+}
