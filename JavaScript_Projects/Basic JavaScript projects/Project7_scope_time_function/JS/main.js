@@ -25,20 +25,24 @@ function get_Date() {
 }
 
 function Year() {
-    if (new Date().getFullYear() < 1999) {
+    userYear = document.getElementById("userYear").value;
+    if (userYear < 1999) {
         document.getElementById("Party").innerHTML = "No matter what year it is, party like it's 1999.";
+    }
+    else {
+        document.getElementById("Party").innerHTML = "It may be the new milleium,but we can still act like it's 1999.";
     }
 }
 
 function Age_Function() {
-    Age = document.getElementById("Age").nodeValue;
+    Age = document.getElementById("Age").value;
     if (Age >= 18) {
         Vote = "You are old enough to vote";
     }
     else {
-        vote = "You are not old enough to vote!";
+        Vote = "You are not old enough to vote!";
     }
-    document.getElementById("How_old_are_you?").innerHTML = vote;
+    document.getElementById("How_old_are_you?").innerHTML = Vote;
 }
 
 function Time_function() {
