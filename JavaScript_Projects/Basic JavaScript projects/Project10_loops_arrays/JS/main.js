@@ -36,7 +36,7 @@ function the_R() {
     return Math.PI;
   }
   
-  document.getElementById("demo").innerHTML = the_R();
+  
 
   let car = {
       make: "Dodge ",

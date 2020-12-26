@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="en">
+    <head>
+        <body>
+            <h1>The script element</h1>
+            <h2>JavaScript Array.some()</h2>
+
+<p>The some() method checks if some array values pass a test.</p>
+
+<p id="demo"></p>
+<p id="momo"></p>
+<script>
+var car;
+car = (val) => "These are my favorite car brands:" + val;
+document.getElementById("demo").innerHTML = car("Honda, Ford, and Nissan")
+
+var numbers = [45, 4, 9, 16, 25];
+var someOver18 = numbers.some(myFunction);
+
+document.getElementById("momo").innerHTML = "Some over 18 is " + someOver18;
+
+function myFunction(value, index, array) {
+  return value > 18;
+}
+</script> 
+        </body>
+    </head>
+</html>

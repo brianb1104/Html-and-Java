@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script src="js/main.js"></script>
+        
         <body>
         <p>"Michael Jackson".</p>
         <button onclick="my_Function()">Try it</button>
@@ -14,11 +14,12 @@
         <button onclick="constant_function()">Click here</button>
         <p>This example calls a function which returns the value of PI:</p>
         <p id="demo"></p>
-        <button onclick="the_R()">Click here</button>
+        <button onclick="document.getElementById('demo').innerHTML = the_R();">Click here</button>
         <p id="Car_Object">Click here</p>
         <h2>JavaScript Loops</h2>
         <p>A loop with a <b>break</b> statement.</p>
         <p id="demo"></p>
+        <script src="js/main.js"defer></script>
         </body>
     </head>
 </html> 
