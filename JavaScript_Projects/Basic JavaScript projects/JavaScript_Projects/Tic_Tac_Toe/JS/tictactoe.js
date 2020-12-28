@@ -107,7 +107,7 @@ else if (arrayIncludes('0O', '4O', '8O')) { drawWinLine(100, 100, 520, 520);}
 //and 9 squares are selected, the code executes.
 else if (selectedSquares.length >= 9) {
     //This function plays the tie game sound.
-    audio('./media/tie.mp3');
+    audio('/media/tie.mp3');
     //This function sets a .3 second timer before the resetGame is called,
     setTimeout(function () { resetGame(); }, 1000);
 }

@@ -1,29 +1,31 @@
-function my_Function() {
+function my_Function() {//Count numbers in Michael Jackson
 var str = "Michael Jackson";
 var n = str.length;
 document.getElementById("demo").innerHTML = n;
 }
 
+//displays loop
 var Instruments = ["Guitar", "Drums", "Piano", "Bass", "Violin", "Trumpet", "Flute"];
 var Content ="";
 var Y;
-function Call_Loop() {
+function Call_Loop() {//loop function
     for (Y = 0; Y < Instruments.length; Y++) {
         Content += Instruments[Y] + "<br>";
     }
     document.getElementById("Loop").innerHTML = Content
 }
 
-function array_Function() {
+function array_Function() {// 
     var Cat_Picture = [];
     Cat_Picture[0] ="sleeping";
     Cat_Picture[1] ="playing";
     Cat_Picture[2] ="eating";
     Cat_Picture[3] ="purring";
     document.getElementById("Array").innerHTML = "In this picture, the cat is " +
-    Cat_Picture[2] + ".";
+    Cat_Picture[2] + ".";//displays Cat_Picture [2] + text.
 }
 
+//constant function.
 function constant_function() {
     const Musical_Instrument = {type:"guitar", brand:"Fender", color:"black"};
     Musical_Instrument.color = "blue";
@@ -32,13 +34,13 @@ function constant_function() {
     Musical_Instrument.type + " was " + Musical_Instrument.price;
 }
 
-function the_R() {
+function the_R() {//displays PI
     return Math.PI;
   }
   
   
 
-  let car = {
+  let car = {//array of cars.
       make: "Dodge ",
       model: "Viper ",
       year: "2021 ",
