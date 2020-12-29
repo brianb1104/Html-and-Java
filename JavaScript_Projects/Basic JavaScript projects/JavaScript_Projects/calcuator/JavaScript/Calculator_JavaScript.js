@@ -2,7 +2,7 @@
 const Calculator = {
     // this is displays 0 on the screen
     Display_Value: "0",
-    // this will hold the first oprand for any expressions, we set it to null for now.
+    // this will hold the first operand for any expressions, we set it to null for now.
     First_Operand: null,
     // this checks whether or not the second operand has been input.
     Wait_Second_Operand: false,
@@ -16,7 +16,7 @@ function Input_Digit(digit) {
     //we are checking to see if Wait_Second_Operand is true and set
     //Display_Value to the key thatclicked.
     if (Wait_Second_Operand === true) {
-        Calculator.display_Value = digit;
+        Calculator.Display_Value = digit;
         Calculator.Wait_Second_Operand = false;
     } else {
         // this overwrites Display_value if the current value is 0
@@ -29,7 +29,7 @@ function Input_Digit(digit) {
 function Input_Decimal(dot) {
     // this ensures that accidental clicking of the decimal point
     //doesn't cause bugs in your operation
-    if (Calculator.Wait_Second_Operand ===true) return;
+    if (Calculator.Wait_Second_Operand === 'true') return;
     if (!Calculator.Display_Value.includes(dot)) {
         //we are saying that if the Display_Value does not contain a decimal point
         //we want to add a decimal point
@@ -47,7 +47,7 @@ function Handle_Operator(Next_Operator) {
     //checks if an operator already exists and if Wait_Second_Operand is true
     //then updates the operator and exirts from the function
     if (operator && Calculator.Wait_Second_Operand) {
-        Calculator.operatorm= Next_Operator;
+        Calculator.operator= Next_Operator;
         return;
     }
     if (First_Operand == null) {
@@ -59,11 +59,11 @@ function Handle_Operator(Next_Operator) {
 //operator is executed
 let result =Perform_Calculation[operator](Value_Now, Value_of_Input);
 //here we add a fixed amount of numbers after the decimal
-result = Number(result).toFixed(9);
+result = Number(result).toFixed (9)
 //this will remove ny trailing o"s
-result = (result * 1).toString();
-Calculator.Display_Value = parseFloat(result);
-Calculator.First_Operand = parseFloat(result);
+result = (result * 1).toString()
+Calculator.Display_Value = result;
+Calculator.First_Operand = result;
 }
 Calculator.Wait_Second_Operand = true;
 Calculator.operator = Next_Operator;
@@ -106,8 +106,8 @@ if (target.classList.contains('operator')) {
     return;
 }
 
-if (target.classList.contains('decimals')) {
-    Handle_Decimal(target.value);
+if (target.classList.contains('decimal')) {
+    Input_Decimal(target.value);
     Update_Display();
     return;
 }

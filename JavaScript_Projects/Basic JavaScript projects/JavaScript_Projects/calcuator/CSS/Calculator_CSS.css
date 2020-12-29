@@ -9,7 +9,7 @@ html {
     box-sizing: inherit;
 }
 .calculator {
-    border: 1,2px solid darkslategray;
+    border: 1.2px solid darkslategray;
     border-radius: 7px;
     position: absolute;
     top: 50%;
