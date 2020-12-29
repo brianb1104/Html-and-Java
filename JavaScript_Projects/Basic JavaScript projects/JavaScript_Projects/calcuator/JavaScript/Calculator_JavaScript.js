@@ -1,5 +1,5 @@
 // Creates an object to keep of values.
-const calculator = {
+const Calculator = {
     // this is displays 0 on the screen
     Display_Value: "0",
     // this will hold the first oprand for any expressions, we set it to null for now.
@@ -12,7 +12,7 @@ const calculator = {
 
 // this modifies values each time a bugtton is clicked.
 function Input_Digit(digit) {
-    const ( Display_Value, Wait_Second_Operand ) = Calculator;
+    const {Display_Value, Wait_Second_Operand } = Calculator;
     //we are checking to see if Wait_Second_Operand is true and set
     //Display_Value to the key thatclicked.
     if (Wait_Second_Operand === true) {
@@ -39,7 +39,7 @@ function Input_Decimal(dot) {
 
 //this section handles operators
 function Handle_Operator(Next_Operator) {
-    const ( First_Operand, Display_Value, operator ) = Calculator
+    const {First_Operand, Display_Value, operator} = Calculator
     //When an operator key is pressed, we covert the current number
     //displayed on the screen to a number and then store the result in
     //Calculator.First_Operand if it doesn't already exist
@@ -53,27 +53,28 @@ function Handle_Operator(Next_Operator) {
     if (First_Operand == null) {
         Calculator.First_Operand = Value_of_Input;
     }else if (operator) {//check if an operator already exists
-    const Value_Now = First_operand || 0;
+    const Value_Now = First_Operand || 0;
 //if operator exists, property lookup is performed for the operator
 //in the Perform_Calculation object and the function that matches the
 //operator is executed
-let result = Perform_Calculation(operator) (Value_Now, Value_of_Input);
+let result =Perform_Calculation[operator](Value_Now, Value_of_Input);
 //here we add a fixed amount of numbers after the decimal
-result = Number(result).toFixed(9)
+result = Number(result).toFixed(9);
 //this will remove ny trailing o"s
-result = (result * 1).toString()
-Calculator.Display_Value = parseFloat(result)
-Calculator.First_operand = parseFloat(result);
+result = (result * 1).toString();
+Calculator.Display_Value = parseFloat(result);
+Calculator.First_Operand = parseFloat(result);
 }
 Calculator.Wait_Second_Operand = true;
 Calculator.operator = Next_Operator;
 }
 
 const Perform_Calculation = {
-    "/": (First_Operand, Second_Operand) => First_operand / Second_Operand,
+    "/": (First_Operand, Second_Operand) => First_Operand / Second_Operand,
     "*": (First_Operand, Second_Operand) => First_Operand * Second_Operand,
+    "+": (First_Operand, Second_Operand) => First_Operand + Second_Operand,
     "-": (First_Operand, Second_Operand) => First_Operand - Second_Operand,
-    "-": (First_Operand, Second_Operand) => Second_Operand
+    "=": (First_Operand, Second_Operand) => Second_Operand
 };
 
 function Calculator_Reset() {
@@ -88,13 +89,13 @@ function Update_Display() {
     display.value = Calculator.Display_Value;
 }
 
-Update_Display ();
+Update_Display();
 //this section monitors button clicks
 const keys = document.querySelector(".calculator-keys");
 keys.addEventListener('click', (event) => {
     //the target variable is an object that represents the element
     // that was clicked
-    const [ target ] = event;
+    const { target } = event;
     //if the element that was clicked on is not a button, exit the function
     if (!target.matches('button')) {
         return;
